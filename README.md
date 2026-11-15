@@ -4,45 +4,70 @@
 
 Thrifting Assistant helps you discover the hidden gems.
 
-Standing in a thrift store with a jacket in your hand, you need one answer fast: is this worth buying to resell? Thrifting Assistant gives Claude a reseller's checklist for clothing and shoes. Send a photo of the tag (or type the brand, size, condition, and tag price) and get a phone-sized answer:
+You're at the bins or a thrift rack with a cart filling up, and you need fast answers: what is this, and is it worth flipping? Thrifting Assistant gives Claude a reseller's playbook for clothing, shoes, hats, and other wearables. Send photos of the garment and its tags, one item or a whole batch, and get answers sized for a phone.
 
-- **VERDICT:** BUY, MAYBE, or PASS, with the reason
-- **What it is:** brand, model, style code, era, size, material
-- **Confidence**, plus the one next photo that would raise it
-- **Resale range** from live searches, labeled sold comps or asking-only
-- **Net profit** on eBay, Poshmark, and Vinted, and the multiple on your tag price
-- **Best platform**, fake risk, value-killing flaws, and collector value
-- **Quick links** to eBay sold, Poshmark sold, Vinted, StockX, and Grailed searches
+**One item** gets a card:
 
-Built by [Nerdwright](https://nerdwright.com) for US resellers. Product page: [nerdwright.com/products/thrifting-assistant](https://nerdwright.com/products/thrifting-assistant/). Version 0.3.0.
+- **Verdict:** 🟢 BUY, 🟡 MAYBE, or 🔴 PASS, with the reason
+- **What it is:** brand, color, model, style code, era, size, material
+- **Resale range** from live searches, labeled SOLD, ASKING, or est.
+- **Net profit** on eBay, Poshmark, and Vinted
+- Fake risk, value-killing flaws, collector value, and search links
+
+**A batch** gets a numbered haul board:
+
+```
+🟢 #12 · olive ¼-zip · Patagonia · L · $40–55 SOLD · net ~$32 · P21–22
+🟡❓ #13 · black flare jeans · Ed Hardy · ? · $38–50 ASKING · P23–24
+🔴 #15 · grey graphic tee · no-name · PASS, no comps pulled · P27
+
+Needs from you
+- #13 size tag
+Tally: 9 BUY · 3 MAYBE · est. resale $410 · est. net $290
+```
+
+Reply "more on 12" for details, "13 is a 30" to answer, or "wrap up" for a trip summary.
+
+Built by [Nerdwright](https://nerdwright.com) for US resellers. Product page: [nerdwright.com/products/thrifting-assistant](https://nerdwright.com/products/thrifting-assistant/). Version 0.4.0.
 
 ## Try it
 
-- "Patagonia Synchilla snap-T, men's M, style 25450, good condition, $6.99 at Goodwill. Buy?"
-- Upload a photo of a sneaker's inside tongue tag and say "$12, worth it?"
+- "At the bins. Patagonia Synchilla snap-T, men's M, good shape. Grab it?"
+- "Patagonia Synchilla snap-T, men's M, style 25450, $6.99 at Goodwill. Buy?"
+- Upload 10 photos (each garment, then its label) and say "bins haul".
 - "My rule is 4× and $20 net. Vintage Levi's trucker jacket, big E tag, size 40, $18."
-- Upload a photo of a rack and ask "Anything here worth flipping?"
 
-## Default buy rule
+## Bins or tagged prices
 
-BUY needs a 3× multiple on the tag price, at least $15 net, and Medium or High confidence. Frequently faked brands need High confidence. Say your own rule ("my rule is 4× and $20 net") and Claude uses it for the rest of the conversation.
+- **Bins (by the pound):** BUY means at least $15 net and Medium or High confidence. No price math per item. Claude assumes bins when your photos show no price tags, or when you say "bins".
+- **Tagged:** BUY also needs 3× the tag price.
+- Frequently faked brands need High confidence. Say your own rule ("my rule is 4× and $20 net") and Claude uses it for the rest of the conversation.
 
-Fee math uses US fees as of November 2026: eBay 13.6% final value fee on the total including sales tax plus a $0.30–$0.40 per-order fee (8% and no per-order fee for athletic shoes at $150+), Poshmark 20% ($2.95 flat under $15), Vinted no seller fee. Fees change; the plugin labels every figure as an estimate. This is a buying aid, not financial advice.
+Fee math uses US fees as of November 2026: eBay 13.6% final value fee on the total including sales tax plus a $0.30–$0.40 per-order fee (8% and no per-order fee for athletic shoes at $150+), Poshmark 20% ($2.95 flat under $15), Vinted no seller fee. Fees change; every figure is labeled as an estimate. This is a buying aid, not financial advice.
+
+## Tips for a big haul
+
+- **Shoot the garment, then its label, in that order.** Flip the label out into the garment shot when you can; one photo per item is faster and cheaper.
+- **12 MP is plenty.** Claude shrinks large photos anyway. On iPhone, turn off 48 MP and ProRAW in Settings > Camera > Formats.
+- **Send batches of 10–20 photos.** The Claude app takes up to 20 per message.
+- **Start a new chat about every 20 items.** Long chats slow down and use more of your plan, because every reply re-reads every photo. Claude gives you a short carry-over block to paste so numbering and open questions continue.
+- **Watch the ❓.** Those items are waiting on one answer from you. Unanswered questions stay listed under "Still open".
 
 ## What this plugin runs, fetches, sends, and stores
 
-- **Runs:** nothing. The plugin is instructions only: one skill and four reference files. No code, hooks, scripts, MCP servers, or connectors.
+- **Runs:** nothing of its own. The plugin is instructions only: one skill and five reference files. No code, hooks, scripts, MCP servers, or connectors. If code execution is turned on in your Claude account, Claude may use it once to read a QR code on a garment tag in your photo.
 - **Fetches:** Claude uses its own built-in web search and web fetch, when they're turned on in your account, to read public marketplace and price pages.
-- **Sends:** item details only (brand, model, style code, size, material) go into those searches and into the quick links. Photos stay in your conversation and are never sent to another service by the plugin. Nerdwright receives nothing.
+- **Sends:** item details only (brand, model, style code, size, material) go into those searches and into the search links. Photos stay in your conversation and are never sent to another service by the plugin. Nerdwright receives nothing.
 - **Stores:** nothing. The plugin doesn't save finds, prices, or your buy rule, and asks Claude not to save them to memory unless you ask. Conversation retention follows your Claude account settings.
-- **Links:** quick links open public search pages on ebay.com, poshmark.com, vinted.com, stockx.com, and grailed.com. Thrifting Assistant isn't affiliated with or endorsed by any of them.
+- **Links:** search links open public pages on ebay.com, poshmark.com, vinted.com, stockx.com, and grailed.com. Thrifting Assistant isn't affiliated with or endorsed by any of them.
 
 ## Limits
 
-- It can't authenticate items from photos. It tells you which checks passed or failed and passes on likely fakes.
-- Marketplace pages sometimes block automated reading. When that happens, Claude says so and gives you the links instead of guessing.
-- Without web search, Claude can't check live prices; the verdict becomes MAYBE with links.
-- Built for clothing and shoes in the US. Other categories and markets get a low-confidence best effort.
+- It can't authenticate items from photos. It tells you which checks passed or failed and passes on likely fakes. A tag QR code that leads to the brand's site is supporting evidence only.
+- Marketplace pages sometimes block automated reading. When that happens, Claude says so and labels the price "est." instead of guessing.
+- Without web search, Claude can't check live prices; verdicts become MAYBE with links.
+- Obvious passes get no price search, to keep big hauls fast. They're labeled "no comps pulled".
+- Built for wearables in the US. Other categories and markets get a low-confidence best effort.
 
 ## Install
 
@@ -52,7 +77,7 @@ Fee math uses US fees as of November 2026: eBay 13.6% final value fee on the tot
 
 ## Evals
 
-`evals/` holds five cases for `claude plugin eval`. They need web access granted: `claude plugin eval . --allow-tools WebSearch,WebFetch`.
+`evals/` holds eight cases for `claude plugin eval`. They need web access granted: `claude plugin eval . --allow-tools WebSearch,WebFetch`.
 
 ## Support
 

@@ -1,8 +1,8 @@
 {
   "name": "nerdwright-thrifting-assistant",
   "displayName": "Thrifting Assistant by Nerdwright",
-  "version": "0.3.0",
-  "description": "Thrifting Assistant helps you discover the hidden gems. Snap a tag on clothing or shoes and get a BUY / MAYBE / PASS call with live resale comps, fake and collector flags, and net profit on eBay, Poshmark, and Vinted.",
+  "version": "0.4.0",
+  "description": "Thrifting Assistant helps you discover the hidden gems. Snap tags on clothing, shoes, and hats, one item or a whole bins haul, and get color-coded BUY / MAYBE / PASS calls with live resale comps, fake and collector flags, and net profit on eBay, Poshmark, and Vinted.",
   "author": {
     "name": "Nerdwright",
     "email": "support@nerdwright.com",
@@ -11,6 +11,18 @@
   "homepage": "https://nerdwright.com/products/thrifting-assistant/",
   "repository": "https://github.com/nerdwright/thrift-resale-scout",
   "license": "MIT",
-  "keywords": ["thrift", "thrifting", "resale", "reselling", "ebay", "poshmark", "vinted", "clothing", "sneakers"],
+  "keywords": [
+    "thrift",
+    "thrifting",
+    "resale",
+    "reselling",
+    "ebay",
+    "poshmark",
+    "vinted",
+    "clothing",
+    "sneakers",
+    "bins",
+    "haul"
+  ],
   "icon": "./.claude-plugin/icon.png"
 }
