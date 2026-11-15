@@ -1,0 +1,15 @@
+{
+  "name": "nerdwright-thrifting-assistant",
+  "description": "Nerdwright's Thrifting Assistant plugin for Claude.",
+  "owner": {
+    "name": "Nerdwright",
+    "email": "support@nerdwright.com"
+  },
+  "plugins": [
+    {
+      "name": "nerdwright-thrifting-assistant",
+      "source": "./",
+      "description": "Thrifting Assistant helps you discover the hidden gems: BUY / MAYBE / PASS calls for thrifted clothing and shoes."
+    }
+  ]
+}
