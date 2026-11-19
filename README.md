@@ -72,7 +72,7 @@ Fee math uses US fees as of November 2026: eBay 13.6% final value fee on the tot
 ## Install
 
 - **Claude directory:** search for Thrifting Assistant once it's listed.
-- **Claude Code:** `/plugin marketplace add nerdwright/thrift-resale-scout`, then `/plugin install nerdwright-thrifting-assistant@nerdwright-thrifting-assistant`.
+- **Claude Code:** install it from the directory listing, or add this repository as a plugin marketplace.
 - **claude.ai upload:** Customize > Plugins > Add > Upload plugin, with a ZIP of this repository.
 
 ## Evals
