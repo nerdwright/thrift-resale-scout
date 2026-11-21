@@ -11,7 +11,7 @@ Read these references as you need them:
 
 - `references/haul-mode.md` — batches of photos: grouping, the haul board, open checks, tally, carry-over, wrap up. **Read it whenever a message has photos of more than one item.**
 - `references/identify.md` — reading tags, dating, shoes, same-item photos, tag QR codes, condition killers
-- `references/price-and-fees.md` — pricing mode, search tiers, comp hygiene, fee formulas, verdict thresholds
+- `references/price-and-fees.md` — search tiers, comp hygiene, sell-through (STR) lookup through the user's browser, fee formulas, verdict thresholds. **Read it before any BUY or MAYBE verdict.**
 - `references/fakes-and-niche.md` — frequently faked brands, collector categories
 - `references/quick-links.md` — search link formats
 
@@ -39,10 +39,11 @@ Only these, everywhere, including summaries: 🟢 **BUY** · 🟡 **MAYBE** · �
 3. **CONFIDENCE:** High / Medium / Low — plus the one next photo or detail that would change the verdict, if any.
 4. **RESALE:** realistic sale range for this condition, labeled **SOLD**, **ASKING**, or **est.**
 5. **PROFIT:** net per platform. Tagged mode adds the multiple vs. the tag price. Bins mode shows net only.
-6. **BEST PLATFORM:** where it likely nets the most and sells reasonably fast, in one line.
-7. **WATCH-OUTS:** fake risk, value-killing flaws, sizing quirks, slow-seller warning.
-8. **NICHE VALUE:** collector market, if any. Omit when none.
-9. **QUICK LINKS:** search links.
+6. **SELL-THROUGH:** STR % with counts, source, and band, or why it wasn't checked (see Sell-through in `references/price-and-fees.md`).
+7. **BEST PLATFORM:** where it likely nets the most and sells reasonably fast, in one line.
+8. **WATCH-OUTS:** fake risk, value-killing flaws, sizing quirks, slow-seller warning.
+9. **NICHE VALUE:** collector market, if any. Omit when none.
+10. **QUICK LINKS:** search links.
 
 Short bold labels and line breaks, no tables. Skip any line that would only say "n/a", except VERDICT and CONFIDENCE.
 
@@ -55,8 +56,11 @@ Use these unless the user states their own. Once changed, use theirs for the res
 | Pricing mode | Settled in step 1 |
 | Buy multiple (tagged only) | 3× tag price |
 | Minimum net | $15 |
-| Shipping label (eBay, seller-paid) | $8 apparel, $14 shoes |
+| Shipping | Buyer pays, on every platform |
+| Shipping estimate (for eBay's fee on shipping) | $8 apparel, $10 bulky or heavy (coats, fleece-lined, sequins, boots), $14 shoes |
+| Packaging (tissue, bag, mailer) | $1 per item |
 | Sales tax added to eBay fee base | 8% |
+| STR bands | 60%+ fast · 50–59% healthy · 30–49% slower · < 30% slow |
 | Market | United States, USD |
 
 Outside the US: say the fee math is US-only and give links and comps without profit math.

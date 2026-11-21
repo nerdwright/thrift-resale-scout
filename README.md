@@ -28,7 +28,7 @@ Tally: 9 BUY · 3 MAYBE · est. resale $410 · est. net $290
 
 Reply "more on 12" for details, "13 is a 30" to answer, or "wrap up" for a trip summary.
 
-Built by [Nerdwright](https://nerdwright.com) for US resellers. Product page: [nerdwright.com/products/thrifting-assistant](https://nerdwright.com/products/thrifting-assistant/). Version 0.4.0.
+Built by [Nerdwright](https://nerdwright.com) for US resellers. Product page: [nerdwright.com/products/thrifting-assistant](https://nerdwright.com/products/thrifting-assistant/). Version 0.4.4.
 
 ## Try it
 
@@ -43,7 +43,15 @@ Built by [Nerdwright](https://nerdwright.com) for US resellers. Product page: [n
 - **Tagged:** BUY also needs 3× the tag price.
 - Frequently faked brands need High confidence. Say your own rule ("my rule is 4× and $20 net") and Claude uses it for the rest of the conversation.
 
-Fee math uses US fees as of November 2026: eBay 13.6% final value fee on the total including sales tax plus a $0.30–$0.40 per-order fee (8% and no per-order fee for athletic shoes at $150+), Poshmark 20% ($2.95 flat under $15), Vinted no seller fee. Fees change; every figure is labeled as an estimate. This is a buying aid, not financial advice.
+## Sell-through (STR)
+
+For every BUY, and any MAYBE it could flip, Claude checks how fast the item sells: eBay sold in the last ~90 days ÷ (sold + active). 60%+ is fast, 50–59% healthy, 30–49% slower, under 30% slow. Slow sellers drop to MAYBE unless net is at least 2× your minimum.
+
+STR needs Claude in Chrome connected to a browser that's signed into eBay, so the counts come from your own session without bot checks. It only opens eBay search pages and never clicks buy, bid, offer, or account controls. Without a connected browser, the card says "STR: not checked" and the verdict still goes out.
+
+Shipping math assumes the buyer pays shipping on every platform, plus $1 packaging per item. Say "I offer free shipping" to change it.
+
+Fee math uses US fees as of November 2026: eBay 13.6% final value fee on the total including shipping and sales tax plus a $0.30–$0.40 per-order fee (8% and no per-order fee for athletic shoes at $150+), Poshmark 20% ($2.95 flat under $15), Vinted no seller fee. Fees change; every figure is labeled as an estimate. This is a buying aid, not financial advice.
 
 ## Tips for a big haul
 
