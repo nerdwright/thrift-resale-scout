@@ -17,7 +17,7 @@ Reply with this and nothing else:
 ```
 **Bins · photos P21–P36 · 6 items**
 
-🟢 #12 · olive ¼-zip · Patagonia · L · $40–55 SOLD · net ~$32 · P21–22
+🟢 #12 · olive ¼-zip · Patagonia · L · $40–55 SOLD · net ~$32 · STR 64% · P21–22
 🟡❓ #13 · black flare jeans · Ed Hardy · ? · $38–50 ASKING · P23–24
 🟢 #14 · cream wool crewneck · Icewear · M · ~$35 SOLD · net ~$24 · P25–26
 🔴 #15 · grey graphic tee · no-name · PASS, no comps pulled · P27
@@ -34,14 +34,14 @@ Reply with this and nothing else:
 
 Rules for the board:
 
-- One line per item: verdict emoji, ❓ if waiting on the user, item number, **color + garment type**, brand, size (`?` if unknown), resale range with its evidence label, net (BUY and MAYBE only), photo numbers.
+- One line per item: verdict emoji, ❓ if waiting on the user, item number, **color + garment type**, brand, size (`?` if unknown), resale range with its evidence label, net (BUY and MAYBE only), STR (or `STR –`), photo numbers.
 - Color + garment type comes first after the number so the user can find the item on the cart without a picture.
 - Sort by verdict (BUY, MAYBE, PASS), then by expected resale, highest first.
 - No paragraphs, no per-item explanations. Details only when asked: "more on 13" gets the single-item card from SKILL.md.
-- Accept shorthand replies: "13 is a 30", "keep 13, pass 17", "skip 7".
+- Accept shorthand replies: "13 is a 30", "keep 13, pass 17", "skip 7", "14: 42/30" (sold/active counts for STR).
 - Top line: pricing mode, photo range, item count.
 
-### Tap-to-expand cards (optional)
+## Tap-to-expand cards (optional)
 
 If the app offers an inline interactive widget tool, you may offer once: "Want tap-to-expand cards instead?" If the user says yes, render the same lines as collapsed cards colored green, yellow, or red. Each card expands to the single-item card. Keep the text board when the widget tool isn't available or the user hasn't asked for cards.
 
@@ -76,5 +76,5 @@ When the user says "wrap up", "trip summary", "summary", or "what did we buy":
 
 - Scope: items from this conversation on today's date only, unless the user asks for more. Say the scope in the first line.
 - One deliverable. Don't make a second version unless asked.
-- Content: BUY items first, then MAYBE, each with number, name, color, size, resale range and evidence label, where to list, and the "check" note (flaw to inspect or open question). Then the open checks, then the totals.
+- Content: BUY items first, then MAYBE, each with number, name, color, size, resale range and evidence label, STR if known, where to list, and the "check" note (flaw to inspect or open question). Then the open checks, then the totals.
 - Photos: if you can create a file or page that includes the user's uploaded photos, show each item's best garment photo (not the label photo) beside its entry. Otherwise give a Markdown list and say photos weren't available here.

@@ -1,5 +1,19 @@
 # Changelog
 
+## 0.4.4 — 2026-11-20
+
+Brings the plugin in line with the Thrifting project instructions (v0.4.1–v0.4.3) and adds fixes from the first live browser test.
+
+- **Sell-through (STR)** in `references/price-and-fees.md`: STR = sold ÷ (sold + active), last ~90 days on eBay. Bands: 60%+ fast, 50–59% healthy, 30–49% slower, < 30% slow. Slow STR drops BUY to MAYBE unless net ≥ 2× the minimum; fast STR can lift a thin-comps MAYBE. New SELL-THROUGH line on the single-item card and `STR n%` on haul-board lines.
+- **Automatic STR lookup through Claude in Chrome** for BUY items (and MAYBEs STR could flip), up to 6 per board, in one tab that's closed afterward. Stops on any CAPTCHA, verify, or sign-in page and never solves them. Only eBay search and Seller Hub Research pages.
+- **Browser choice:** when several browsers are connected, ask once, list the user's named preferred browser first, and keep it for the conversation. If one browser gets an eBay check, offer to switch once.
+- **Uncommon sizes:** note when 2XL+, petite, or tall makes up a bigger share of active than sold listings.
+- **Formula guard:** explicitly never sold ÷ active (reads ~10 points high).
+- **Buyer-paid shipping on every platform** (was seller-paid on eBay). eBay's fee now includes shipping (−0.147 × shipping); $1 packaging per item on all platforms; $10 estimate for bulky items. Worked examples updated.
+- **Quick links:** eBay active link alongside eBay sold, using the same keywords.
+- **Project instructions** are now generated from the plugin: `instructions/thrifting-assistant-project.md`, built by `tools/build_project_instructions.py`. The plugin is the one source of truth.
+- **Evals:** new `str-no-browser` case.
+
 ## 0.4.0 — 2026-11-15
 
 From the first field test: about 90 items across a Value Village rack and a Goodwill bins haul.
