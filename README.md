@@ -45,7 +45,7 @@ Built by [Nerdwright](https://nerdwright.com) for US resellers. Product page: [n
 
 ## Sell-through (STR)
 
-For every BUY, and any MAYBE it could flip, Claude checks how fast the item sells: eBay sold in the last ~90 days ÷ (sold + active). 60%+ is fast, 50–59% healthy, 30–49% slower, under 30% slow. Slow sellers drop to MAYBE unless net is at least 2× your minimum.
+After a quick first pass, Claude checks how fast each BUY item sells (MAYBE and PASS items are skipped, so bulk hauls stay fast): eBay sold in the last ~90 days ÷ (sold + active). 60%+ is fast, 50–59% healthy, 30–49% slower, under 30% slow. Slow sellers drop to MAYBE unless net is at least 2× your minimum.
 
 STR needs Claude in Chrome connected to a browser that's signed into eBay, so the counts come from your own session without bot checks. It only opens eBay search pages and never clicks buy, bid, offer, or account controls. Without a connected browser, the card says "STR: not checked" and the verdict still goes out.
 

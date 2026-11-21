@@ -41,14 +41,14 @@ STR shows how fast an item sells: the share of recent listings that actually sol
 | 30–49% | Moves, slower | Buy only if net clears the minimum comfortably |
 | < 30% | Slow, crowded | Buy only if net ≥ 2× the minimum, else MAYBE or PASS |
 
-**When to look it up:** every item that is BUY after the price and net rules, plus any MAYBE that STR alone could flip. Single items: always, if it's BUY or MAYBE. Haul boards: up to 6 items per board, highest expected resale first; list the rest as "STR: skipped (limit)".
+**When to look it up:** only items that are already BUY after the price and net rules. Do the quick filtering first, from photos and comps, and never spend an STR lookup on a MAYBE or a PASS; their lines show `STR –`. This applies to single items and haul boards alike. Haul boards: up to 6 BUYs per board, highest expected resale first; list the rest as "STR: skipped (limit)".
 
 **How to get the counts, in this order:**
 
 1. **The user's browser (preferred).** If Claude in Chrome tools (`mcp__claude-in-chrome__*`) are available in this conversation, possibly as deferred tools you load first, use them. A browser signed into eBay avoids eBay's bot checks.
    - Load the tools in one ToolSearch call: `tabs_context_mcp`, `tabs_create_mcp`, `navigate`, `find`, `get_page_text`, `browser_batch`, `tabs_close_mcp`, `list_connected_browsers`, `select_browser`.
    - Call `tabs_context_mcp` (createIfEmpty true). If exactly one browser is connected, use it. If several are connected and the tool asks you to choose, ask once with every connected browser as an option; if the user's own instructions name a preferred browser or device ID, list that one first marked (Recommended). Use the chosen browser for the rest of the conversation without asking again. If none is connected, go to step 3.
-   - Open one new tab for the whole batch. For each item, in one `browser_batch`: navigate to the eBay sold URL, `find` "results count heading", navigate to the eBay active URL, `find` "results count heading".
+   - Open one new tab for the whole batch. For each item, in one `browser_batch`: navigate to the eBay sold URL, `find` "results count heading", navigate to the eBay active URL, `find` "results count heading". **One pair of searches per item, no more.** Don't run a second, broader search when counts are low; if sold is under 5, show the STR marked "thin" and leave the verdict alone.
    - Read the heading "N results for …". Parse "6,300+" as 6300 and mark the STR "~" (eBay rounds large counts). "0 results" or a "No exact matches found" notice means 0 for that side; if both are 0, STR is "n/a, no matches". If the heading is missing, the page may still be loading: wait a moment and read it once more.
    - Close the tab when done.
    - **Stop conditions:** a CAPTCHA, a "verify yourself" page, a sign-in page, or two failed tool calls. Never solve a CAPTCHA or sign in. If another connected browser exists, say "this browser got an eBay check" and offer to switch once; a browser that isn't signed into eBay usually gets the check. Otherwise write "STR: browser blocked (eBay check)" or "STR: browser not connected" and continue with the verdict. Retry once per board at most.
@@ -62,9 +62,9 @@ STR shows how fast an item sells: the share of recent listings that actually sol
 - Single-item card: `STR 58% · 420 sold / 300 active · 90d · eBay (healthy)`. Add `~` when counts were rounded.
 - Haul board: append `· STR 58%` after net. Use `· STR –` when not checked.
 
-**Effect on the verdict:** apply the bands after the price and net rules. Slow STR (< 30%) downgrades BUY to MAYBE unless best realistic net ≥ 2× the minimum net. Fast STR (≥ 60%) can lift a MAYBE held back only by thin comps to BUY, if the net and multiple rules are met. STR never overrides a fake-risk or condition PASS. When STR changes a verdict, say so in the verdict line ("BUY → MAYBE, STR 22%").
+**Effect on the verdict:** apply the bands after the price and net rules. Slow STR (< 30%) downgrades BUY to MAYBE unless best realistic net ≥ 2× the minimum net. STR never overrides a fake-risk or condition PASS. When STR changes a verdict, say so in the verdict line ("BUY → MAYBE, STR 22%").
 
-**Speed:** about 10 seconds per item. Run the lookups after you've worked out the verdicts, then post the board once with STR included. Don't post a board and then a second update.
+**Speed:** about 10–15 seconds per BUY item. Run the lookups after you've worked out the verdicts, then post the board once with STR included. Don't post a board and then a second update.
 
 ## Net per platform (US)
 

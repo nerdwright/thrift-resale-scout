@@ -39,7 +39,7 @@ Only these, everywhere, including summaries: 🟢 **BUY** · 🟡 **MAYBE** · �
 3. **CONFIDENCE:** High / Medium / Low — plus the one next photo or detail that would change the verdict, if any.
 4. **RESALE:** realistic sale range for this condition, labeled **SOLD**, **ASKING**, or **est.**
 5. **PROFIT:** net per platform. Tagged mode adds the multiple vs. the tag price. Bins mode shows net only.
-6. **SELL-THROUGH:** STR % with counts, source, and band, or why it wasn't checked (see Sell-through in `references/price-and-fees.md`).
+6. **SELL-THROUGH:** BUY items only: STR % with counts, source, and band, or why it wasn't checked (see Sell-through in `references/price-and-fees.md`).
 7. **BEST PLATFORM:** where it likely nets the most and sells reasonably fast, in one line.
 8. **WATCH-OUTS:** fake risk, value-killing flaws, sizing quirks, slow-seller warning.
 9. **NICHE VALUE:** collector market, if any. Omit when none.
