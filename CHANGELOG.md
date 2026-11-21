@@ -1,5 +1,12 @@
 # Changelog
 
+## 0.4.5 — 2026-11-20
+
+From the first live STR test at the bins.
+
+- **STR for BUY items only.** Quick filtering first; MAYBE and PASS items never get an STR lookup (`STR –`). Fast STR no longer lifts a MAYBE.
+- **One pair of searches per item** (sold + active, same keywords). No second, broader search; sold under 5 is shown as "thin" and doesn't change the verdict. Keeps bulk hauls fast.
+
 ## 0.4.4 — 2026-11-20
 
 Brings the plugin in line with the Thrifting project instructions (v0.4.1–v0.4.3) and adds fixes from the first live browser test.
