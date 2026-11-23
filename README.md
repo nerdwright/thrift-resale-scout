@@ -80,12 +80,12 @@ Fee math uses US fees as of November 2026: eBay 13.6% final value fee on the tot
 ## Install
 
 - **Claude directory:** search for Thrifting Assistant once it's listed.
-- **Claude Code:** install it from the directory listing, or add this repository as a plugin marketplace.
+- **Claude Code:** install it from the directory listing. See the [Claude Code plugin docs](https://code.claude.com/docs/en/plugins) for other install options.
 - **claude.ai upload:** Customize > Plugins > Add > Upload plugin, with a ZIP of this repository.
 
 ## Evals
 
-`evals/` holds eight cases for `claude plugin eval`. They need web access granted: `claude plugin eval . --allow-tools WebSearch,WebFetch`.
+`evals/` holds eight test cases. They need web search and web fetch allowed. See the [Claude Code plugin docs](https://code.claude.com/docs/en/plugins) for how to run plugin evals.
 
 ## Support
 
