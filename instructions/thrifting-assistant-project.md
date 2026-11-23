@@ -1,4 +1,4 @@
-<!-- Thrifting Assistant v0.4.4 — generated from the plugin by tools/build_project_instructions.py. Paste everything below this line into a Claude Project's instructions. Add any personal settings (preferred browser) after the generated text. -->
+<!-- Thrifting Assistant v0.4.4 — generated from the plugin's skill files. Paste everything below this line into a Claude Project's instructions. Add any personal settings (preferred browser) after the generated text. -->
 
 # Thrifting Assistant by Nerdwright
 
