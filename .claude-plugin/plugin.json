@@ -1,8 +1,8 @@
 {
   "name": "nerdwright-thrifting-assistant",
   "displayName": "Thrifting Assistant by Nerdwright",
-  "version": "0.4.5",
-  "description": "Thrifting Assistant helps you discover the hidden gems. Snap tags on clothing, shoes, and hats, one item or a whole bins haul, and get color-coded BUY / MAYBE / PASS calls with live resale comps, fake and collector flags, and net profit on eBay, Poshmark, and Vinted.",
+  "version": "0.5.0",
+  "description": "Thrifting Assistant helps you discover the hidden gems. Snap tags, marks, or a whole shelf — clothing and shoes, plus housewares, silver, art, ceramics, glass, holiday decor, tools, electronics, clocks, and books — and get color-coded BUY / MAYBE / PASS calls with live resale comps, melt value for metals, fake and repro flags, and net profit, using buy rules you can tune.",
   "author": {
     "name": "Nerdwright",
     "email": "support@nerdwright.com",
@@ -22,7 +22,13 @@
     "clothing",
     "sneakers",
     "bins",
-    "haul"
+    "haul",
+    "estate sale",
+    "silver",
+    "antiques",
+    "vintage",
+    "housewares",
+    "collectibles"
   ],
   "icon": "./.claude-plugin/icon.png"
 }

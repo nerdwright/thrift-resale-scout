@@ -1,5 +1,23 @@
 # Changelog
 
+## 0.5.0 — 2026-11-27
+
+Broadens the scope from wearables to general thrift and estate goods, and makes the buy rules a setting you can tune.
+
+- **Category packs** in `references/categories/`: wearables, silver & metals, watches & jewelry, art & prints, ceramics & glass, holiday decor, electronics/cameras/clocks, household/cookware/tools, books & ephemera, Asian art & textiles, furniture (local only). Every pack uses the same six headings (ID cues, Fakes & repros, Value drivers, Value killers, Comps, Channel & ship) so other Nerdwright plugins can reuse them. `categories/README.md` routes items to a pack; no match falls back to a general workflow at Low confidence.
+- **Shared core** (`references/core-pricing.md`): comp labels now include **MELT** and **est. MELT** (weight × purity × dated spot), eBay fees by category re-checked 2026-11-27 (13.6% most; 15% jewelry, watches up to $1,000, and women's handbags; 15.3% books; $0.40/$0.30 per order), local and specialist channels, shipping classes (small / medium / large / local; framed art, glass, and ceramics never small), COGS, and the reseller-permit setting.
+- **Tiered buy rules by COGS** (tagged mode): < $20 3× and $15 profit · $20–$100 2× and $25 · > $100 2× and $100. Profit = net − COGS. COGS includes sales tax unless you have a reseller permit. Slow STR doubles the minimum profit. Bins mode is unchanged: $15 minimum net.
+- **User-configurable rules** (`references/settings.md`): a `thrift_scout_settings` YAML block (project instructions, carry-over, or chat) sets tiers, profit basis, bins minimum, STR bands and slow factor, tax, permit, and shipping costs. Built-in profiles `default`, `legacy-0.4.5`, and `tight-high-end`. "What if…" and "compare A vs B" re-score a board without new searches. PROFIT always names the rule used.
+- **Price, then flag:** likely fakes and repros are priced as if genuine (labeled), with a risk flag (none / low / medium / high + reason) and a PASS recommendation at high risk. Still never calls anything authentic and never helps list a likely fake as genuine. New non-wearable traps (jade vs soapstone, "Tiffany", export silver marks, Lladró lookalikes, luxury watches, prints sold as originals, Murano labels).
+- **Single-item card:** new CATEGORY line, MELT inside RESALE for metals, SHIP CLASS and the rule inside PROFIT, BEST CHANNEL (was BEST PLATFORM), RISK in WATCH-OUTS.
+- **Haul mode:** shelf, box-lot, and estate-table photos are itemized, counted twice with both counts stated, priced per unit or per set explicitly, and tallied by item net; a lot verdict only when items sell together.
+- **Identify:** a general workflow for every category (category → every photo → marks → maker → era → material → condition).
+- **Quick links:** category-scoped eBay links, price-guide and hallmark search links (links only), AbeBooks for books.
+- **Description** now covers non-wearables and excludes listing requests and auction links (Listing Assistant and Auction Scout).
+- **Behavior changes vs 0.4.5:** tagged multiples are measured against COGS (tag + 8% tax by default), and the minimum is profit (net − COGS) rather than net payout, so items near the 3× / $15 line can move from BUY to MAYBE. Use the `legacy-0.4.5` profile to reproduce 0.4.5 verdicts.
+- **Evals:** 12 new cases (silver melt, jade vs soapstone, holiday shelf, Seiko watch, framed print, untested camera, reseller permit, Levi's regression, bins housewares, list-this handoff, settings what-if, settings block). Existing graders accept COGS-based multiples; the Jordan case now also checks it was priced and flagged.
+- **Project instructions** (`instructions/thrifting-assistant-project.md`) regenerated for 0.5.0.
+
 ## 0.4.5 — 2026-11-20
 
 From the first live STR test at the bins.
@@ -18,7 +36,7 @@ Brings the plugin in line with the Thrifting project instructions (v0.4.1–v0.4
 - **Formula guard:** explicitly never sold ÷ active (reads ~10 points high).
 - **Buyer-paid shipping on every platform** (was seller-paid on eBay). eBay's fee now includes shipping (−0.147 × shipping); $1 packaging per item on all platforms; $10 estimate for bulky items. Worked examples updated.
 - **Quick links:** eBay active link alongside eBay sold, using the same keywords.
-- **Project instructions** are now generated from the plugin: `instructions/thrifting-assistant-project.md`, built by `tools/build_project_instructions.py`. The plugin is the one source of truth.
+- **Project instructions** are now generated from the plugin: `instructions/thrifting-assistant-project.md`, generated from the skill files. The plugin is the one source of truth.
 - **Evals:** new `str-no-browser` case.
 
 ## 0.4.0 — 2026-11-15
