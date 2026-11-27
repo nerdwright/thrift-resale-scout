@@ -13,6 +13,20 @@ Give links as Markdown links on one line each so they're easy to tap.
 | Sneakers, add | `https://stockx.com/search?s=KEYWORDS` |
 | Menswear and streetwear, add | `https://www.grailed.com/shop?query=KEYWORDS` |
 
+Non-wearables (housewares, silver, art, ceramics, glass, decor, tools, electronics, clocks, books):
+
+| Link | URL |
+| --- | --- |
+| eBay sold, in a category | `https://www.ebay.com/sch/CATID/i.html?_nkw=KEYWORDS&LH_Sold=1&LH_Complete=1` |
+| eBay active, in a category | `https://www.ebay.com/sch/CATID/i.html?_nkw=KEYWORDS` |
+| Price-guide search (links only) | `https://www.google.com/search?q=KEYWORDS+worthpoint` |
+| Hallmark or maker's mark search | `https://www.google.com/search?q=KEYWORDS+hallmark` (or `+backstamp`, `+signature`) |
+| Books, add | `https://www.abebooks.com/servlet/SearchResults?kn=KEYWORDS` |
+
+eBay top-level category IDs (CATID) for the category-scoped links: Pottery & Glass `870`, Art `550`, Antiques `20081`, Collectibles `1`, Jewelry & Watches `281`, Cameras & Photo `625`, Consumer Electronics `293`, Home & Garden `11700`, Books & Magazines `267`. If unsure of the ID, use the plain eBay links above; never guess a sub-category ID.
+
+Price-guide sites (Worthpoint and similar) are often paywalled. Give them as links for the user to open; don't quote their prices unless you retrieved the page and it showed a sold price.
+
 Example for a Patagonia Synchilla Snap-T, style 25450:
 
 - [eBay sold](https://www.ebay.com/sch/i.html?_nkw=patagonia+synchilla+snap-t+25450&LH_Sold=1&LH_Complete=1)
