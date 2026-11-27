@@ -8,6 +8,7 @@ Clothing, shoes, hats, bags, belts, swimwear, kids' clothing, uniforms. Detailed
 - Hats: size on the band or sticker; maker tag (New Era, '47, Otto, Yupoong).
 - Dating: zipper brand (YKK, Talon, Scovill), single-stitch hems, union labels, made-in-USA tags. Era only when the tag or construction shows it.
 - Military issue: contract and spec labels (MIL spec numbers) on the inside tag.
+- Levi's: red tab (capital "E" vs lowercase "e"), button-back stamp, selvedge on the outseam, care tag. Ask for the inside button stamp or care tag before calling an era; Big E alone doesn't date it.
 - Ask for: size tag first; possible youth size; inside tag with the style number on likely $40+ items.
 
 ## Fakes & repros

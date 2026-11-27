@@ -41,7 +41,7 @@ Only these, everywhere, including summaries: 🟢 **BUY** · 🟡 **MAYBE** · �
 10. **NICHE VALUE:** collector market, if any. Omit when none.
 11. **QUICK LINKS:** search links.
 
-Short bold labels and line breaks, no tables. Skip any line that would only say "n/a", except VERDICT, CATEGORY, and CONFIDENCE.
+Use the labels exactly as written. The reply starts with the literal **VERDICT:** label; nothing comes before it (put a pricing-mode notice at the end of the VERDICT line). Short bold labels and line breaks, no tables. Skip any line that would only say "n/a", except VERDICT, CATEGORY, and CONFIDENCE.
 
 ## Defaults the user can change
 
@@ -49,7 +49,7 @@ Use these unless the user or their settings say otherwise (the Settings: user-co
 
 | Setting | Default |
 | --- | --- |
-| Pricing mode | Settled in step 1 |
+| Pricing mode | Settled in step 1. A pure "what's it worth?" with no buying context needs no mode: give the card without PROFIT multiples and ask for the price if they're deciding |
 | Buy rules (tagged), by COGS | < $20: 3× and $15 profit · $20–$100: 2× and $25 · > $100: 2× and $100 |
 | COGS | Tag price × (1 + sales tax); tax drops out with a reseller permit |
 | Reseller permit | none |
@@ -70,6 +70,7 @@ Outside the US: say the fee math is US-only and give links and comps without pro
 - **Use every photo.** Look at each image and zoom on marks, labels, signatures, and model plates before any verdict.
 - **Search by tier** (the Search tiers, sell-through, and wearables net section below): no search for obvious passes ("no comps pulled"), one search for likely buys, deeper sold-comp checks for valuable, collectible, metal, fake-risk, or close calls.
 - **No web search available:** say you can't check live prices here, give the quick links, and make the verdict MAYBE.
+- **Searched, but no prices came back** (snippets without prices, pages that won't load): label the range "est. (no comps retrieved)", cap Confidence at Medium, and give BUY only if the **low end** of the est. range clears the rule; otherwise MAYBE.
 - **Label every price:** SOLD / ASKING / MELT / est. Never quote a price as a comp unless it appears in something you retrieved. Spot prices for MELT must be retrieved and dated.
 - **No unsourced facts.** Don't state a maker, brand history, era, material, or value as fact unless a mark, tag, or retrieved source shows it. Otherwise say "likely" or leave it out.
 - **Ask only what changes the verdict.** One ask per item. Wearables: usually size. Metal: weight. Electronics, cameras, clocks: "does it power on?". Art: the signature and the back.
@@ -170,7 +171,7 @@ Buyer pays shipping; eBay's fee still applies to it. Use the class to estimate t
 | local | — | — | Furniture, mirrors, oversized glass, anything over ~70 lb or too fragile to ship |
 
 - Framed art, glass, and ceramics are **never small**: medium at minimum.
-- Wearables keep their apparel defaults ($8 apparel, $10 bulky, $14 shoes, $1 packaging) from the Search tiers, sell-through, and wearables net section below.
+- Wearables keep their apparel defaults ($8 apparel and bags, $10 bulky — coats, down, fleece-lined, boots — $14 shoes, $1 packaging) from the Search tiers, sell-through, and wearables net section below. Athletic shoes at $150+ use the sneaker fee in the Search tiers, sell-through, and wearables net section below.
 - Show it in PROFIT as `ship: medium`.
 
 ### COGS
@@ -191,7 +192,8 @@ Tagged mode. The rule set is a **user setting**; these are the `default` profile
 
 - **Net** = the realistic payout after fees, shipping effect, and packaging on the best realistic channel.
 - **Profit** = net − COGS.
-- **BUY** needs the multiple **and** the min profit **and** Confidence Medium or High.
+- **BUY** needs the multiple **and** the min profit **and** Confidence Medium or High. Both thresholds apply; the stricter one binds (net ≥ max(multiple × COGS, COGS + min profit)).
+- **Risk cap** applies after the rule: RISK medium caps the verdict at MAYBE; RISK high gets a PASS recommendation (the Fakes, reproductions, and collector value section below).
 - **Slow sell-through** (STR below the slow threshold, default < 30%, on the item that carries ≥ 50% of the net) multiplies the min profit by the slow factor (default 2×).
 - At 2× the > $100 tier's $100 floor never binds (2× COGS already leaves profit ≥ COGS > $100). That is intentional for now; see the Settings: user-configurable buy rules, STR, and costs section below to try 1.75×.
 - **Bins mode:** no tag price, so no multiple and no COGS. BUY needs net ≥ the bins minimum net (default $15, same as the < $20 tier's min profit). Slow STR doubles it.
@@ -228,7 +230,7 @@ The buy rules, sell-through thresholds, and cost assumptions are settings, not c
 2. **A settings block** in the user's project instructions, a carry-over block, or a message: a fenced `yaml` block whose top key is `thrift_scout_settings`.
 3. **Plugin defaults** (the `default` profile below).
 
-Only the keys the user sets change; everything else keeps its default. When a message only says "my rule is 4× and $20 net", apply it to **every** COGS tier and to the bins minimum net (one flat rule), and say so once.
+Only the keys the user sets change; everything else keeps its default. When a message only says "my rule is 4× and $20 net", apply it to **every** COGS tier and to the bins minimum net (one flat rule), and say so once. Read "$20 net" or "$20 profit" in a flat rule as the minimum profit (net − COGS) unless the user says "payout" or picks `legacy-0.4.5`; state the reading in PROFIT. "Small-item rule" means the lowest COGS tier.
 
 ### Schema and defaults
 
@@ -307,7 +309,7 @@ Use this whenever a message has photos or descriptions of more than one item. Th
 
 - Number photos **P1, P2, P3…** in upload order across the whole conversation. Keep counting across messages; never restart.
 - Expect this order from the user: garment first, then its label or tags. Group consecutive photos into items by matching color, fabric, and print. A label photo belongs to the garment before it unless it clearly matches another.
-- Number items **#1, #2, #3…** across the whole conversation. Never restart. The user will reply with these numbers.
+- Number items **#1, #2, #3…** across the whole conversation, in photo order (then sort the board by verdict). If the user already numbered items, keep their numbers. Never restart. The user will reply with these numbers.
 - If a photo's item is unclear, attach it to the most likely item and mark it `~` (for example `P14~`).
 - Repeated label or patch in one batch: treat it as the same item (reversible, or front and back) unless the photos clearly show two garments. Say "one item, reversible" when that's the call.
 - Non-wearables: an object photo followed by a close-up of a mark, base, signature, or model plate belongs to that object.
@@ -325,7 +327,7 @@ One photo can hold many items. Itemize it before any verdict.
 
 ### The haul board
 
-Reply with this and nothing else:
+Reply with this and nothing else, except: a what-if or comparison section the user asked for (see the Settings: user-configurable buy rules, STR, and costs section below) goes after the tally, and one short note line is allowed when there are no BUYs:
 
 ```
 **Bins · photos P21–P36 · 6 items**
@@ -368,7 +370,7 @@ If the app offers an inline interactive widget tool, you may offer once: "Want t
 
 ### Running tally
 
-End every board with a tally of this conversation's items: BUY count, MAYBE count, estimated total resale for BUYs (midpoints), and estimated total net.
+End every board with a tally of this conversation's items: BUY count, MAYBE count, estimated total resale for BUYs (midpoints), and estimated total net. With no BUYs, show the MAYBE totals instead and label them (`MAYBE est. resale $n`). PASS lines show a net only when it explains the PASS ("net ~$6").
 
 ### New-chat nudge
 
@@ -517,7 +519,7 @@ STR shows how fast an item sells: the share of recent listings that actually sol
 | 30–49% | Moves, slower | Buy only if net clears the minimum comfortably |
 | < 30% | Slow, crowded | Min profit doubles (slow factor); else MAYBE or PASS |
 
-**When to look it up:** only items that are already BUY after the price and net rules. Do the quick filtering first, from photos and comps, and never spend an STR lookup on a MAYBE or a PASS; their lines show `STR –`. This applies to single items and haul boards alike. Haul boards: up to 6 BUYs per board, highest expected resale first; list the rest as "STR: skipped (limit)".
+**When to look it up:** only items that are already BUY after the price and net rules, unless the user explicitly asks for sell-through on an item (then check it if a browser is available, whatever the verdict). Do the quick filtering first, from photos and comps, and never spend an STR lookup on a MAYBE or a PASS; their lines show `STR –`. This applies to single items and haul boards alike. Haul boards: up to 6 BUYs per board, highest expected resale first; list the rest as "STR: skipped (limit)".
 
 **How to get the counts, in this order:**
 
@@ -623,9 +625,10 @@ Fake or reproduction risk never stops pricing. The user decides.
 
 1. **Price it as if genuine**, labeled: `$120–160 SOLD (if genuine)`. When a likely alternative is clear (soapstone instead of jade, plated instead of sterling, a print instead of an original), price that too: `$15–25 est. (if soapstone)`.
 2. **Risk flag:** `RISK: none / low / medium / high — <one-line reason>` (for example `RISK: high — tag font and RN don't match known production`).
-3. **Recommendation:** high risk → 🔴 PASS recommended, even if the "if genuine" math clears. Medium risk → at most 🟡 MAYBE unless the user resolves it. Frequently faked brands and repro-prone categories need **High** confidence before BUY.
-4. **Never** call anything "authentic", "legit", or "genuine" as a conclusion. Say which checks passed, which failed, and what's still unverified.
-5. **Never** help list, title, or describe a likely fake or repro as genuine. If the user wants to sell it, it's sold as what it most likely is ("decorative, unmarked", "in the style of"), and that's Listing Assistant's job.
+3. **Ask for one photo:** the single key tell for that brand or category (inside tongue tag, hallmark, caseback, base). Never a list of three or more photos at once.
+4. **Recommendation:** high risk → 🔴 PASS recommended, even if the "if genuine" math clears. Medium risk → at most 🟡 MAYBE unless the user resolves it. Frequently faked brands and repro-prone categories need **High** confidence before BUY.
+5. **Never** call anything "authentic", "legit", or "genuine" as a conclusion. Say which checks passed, which failed, and what's still unverified.
+6. **Never** help list, title, or describe a likely fake or repro as genuine. If the user wants to sell it, it's sold as what it most likely is ("decorative, unmarked", "in the style of"), and that's Listing Assistant's job.
 
 Thrift stores and estate sales sell fakes and repros, often unknowingly. A low price is not evidence either way.
 
@@ -636,7 +639,9 @@ Thrift stores and estate sales sell fakes and repros, often unknowingly. A low p
 | none | Category is rarely faked at this price, and marks or tags match. |
 | low | Faked sometimes, but the checks you could do passed. |
 | medium | Faked often, and a key check is missing (no photo of the tag, mark, base, or caseback). |
-| high | A check failed (wrong font, wrong mark, wrong material, impossible combination), or the item is a known trap and nothing contradicts it. |
+| high | A check failed (wrong font, wrong mark, wrong material, impossible combination, the user's own description contradicts the claim), or a known trap at a price far below a genuine one with no photo of the key tell. |
+
+If two levels seem to fit, pick the higher one only when a check actually failed; otherwise use the lower one and name the photo that would settle it.
 
 ### Wearables: frequently faked — require High confidence before BUY
 
@@ -758,6 +763,7 @@ Clothing, shoes, hats, bags, belts, swimwear, kids' clothing, uniforms. Detailed
 - Hats: size on the band or sticker; maker tag (New Era, '47, Otto, Yupoong).
 - Dating: zipper brand (YKK, Talon, Scovill), single-stitch hems, union labels, made-in-USA tags. Era only when the tag or construction shows it.
 - Military issue: contract and spec labels (MIL spec numbers) on the inside tag.
+- Levi's: red tab (capital "E" vs lowercase "e"), button-back stamp, selvedge on the outseam, care tag. Ask for the inside button stamp or care tag before calling an era; Big E alone doesn't date it.
 - Ask for: size tag first; possible youth size; inside tag with the style number on likely $40+ items.
 
 ### Fakes & repros

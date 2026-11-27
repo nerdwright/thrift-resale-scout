@@ -43,7 +43,7 @@ STR shows how fast an item sells: the share of recent listings that actually sol
 | 30–49% | Moves, slower | Buy only if net clears the minimum comfortably |
 | < 30% | Slow, crowded | Min profit doubles (slow factor); else MAYBE or PASS |
 
-**When to look it up:** only items that are already BUY after the price and net rules. Do the quick filtering first, from photos and comps, and never spend an STR lookup on a MAYBE or a PASS; their lines show `STR –`. This applies to single items and haul boards alike. Haul boards: up to 6 BUYs per board, highest expected resale first; list the rest as "STR: skipped (limit)".
+**When to look it up:** only items that are already BUY after the price and net rules, unless the user explicitly asks for sell-through on an item (then check it if a browser is available, whatever the verdict). Do the quick filtering first, from photos and comps, and never spend an STR lookup on a MAYBE or a PASS; their lines show `STR –`. This applies to single items and haul boards alike. Haul boards: up to 6 BUYs per board, highest expected resale first; list the rest as "STR: skipped (limit)".
 
 **How to get the counts, in this order:**
 

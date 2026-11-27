@@ -8,7 +8,7 @@ The buy rules, sell-through thresholds, and cost assumptions are settings, not c
 2. **A settings block** in the user's project instructions, a carry-over block, or a message: a fenced `yaml` block whose top key is `thrift_scout_settings`.
 3. **Plugin defaults** (the `default` profile below).
 
-Only the keys the user sets change; everything else keeps its default. When a message only says "my rule is 4× and $20 net", apply it to **every** COGS tier and to the bins minimum net (one flat rule), and say so once.
+Only the keys the user sets change; everything else keeps its default. When a message only says "my rule is 4× and $20 net", apply it to **every** COGS tier and to the bins minimum net (one flat rule), and say so once. Read "$20 net" or "$20 profit" in a flat rule as the minimum profit (net − COGS) unless the user says "payout" or picks `legacy-0.4.5`; state the reading in PROFIT. "Small-item rule" means the lowest COGS tier.
 
 ## Schema and defaults
 

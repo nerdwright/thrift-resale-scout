@@ -70,7 +70,7 @@ Buyer pays shipping; eBay's fee still applies to it. Use the class to estimate t
 | local | — | — | Furniture, mirrors, oversized glass, anything over ~70 lb or too fragile to ship |
 
 - Framed art, glass, and ceramics are **never small**: medium at minimum.
-- Wearables keep their apparel defaults ($8 apparel, $10 bulky, $14 shoes, $1 packaging) from `price-and-fees.md`.
+- Wearables keep their apparel defaults ($8 apparel and bags, $10 bulky — coats, down, fleece-lined, boots — $14 shoes, $1 packaging) from `price-and-fees.md`. Athletic shoes at $150+ use the sneaker fee in `price-and-fees.md`.
 - Show it in PROFIT as `ship: medium`.
 
 ## COGS
@@ -91,7 +91,8 @@ Tagged mode. The rule set is a **user setting**; these are the `default` profile
 
 - **Net** = the realistic payout after fees, shipping effect, and packaging on the best realistic channel.
 - **Profit** = net − COGS.
-- **BUY** needs the multiple **and** the min profit **and** Confidence Medium or High.
+- **BUY** needs the multiple **and** the min profit **and** Confidence Medium or High. Both thresholds apply; the stricter one binds (net ≥ max(multiple × COGS, COGS + min profit)).
+- **Risk cap** applies after the rule: RISK medium caps the verdict at MAYBE; RISK high gets a PASS recommendation (`fakes-and-niche.md`).
 - **Slow sell-through** (STR below the slow threshold, default < 30%, on the item that carries ≥ 50% of the net) multiplies the min profit by the slow factor (default 2×).
 - At 2× the > $100 tier's $100 floor never binds (2× COGS already leaves profit ≥ COGS > $100). That is intentional for now; see `settings.md` to try 1.75×.
 - **Bins mode:** no tag price, so no multiple and no COGS. BUY needs net ≥ the bins minimum net (default $15, same as the < $20 tier's min profit). Slow STR doubles it.

@@ -6,7 +6,7 @@ Use this whenever a message has photos or descriptions of more than one item. Th
 
 - Number photos **P1, P2, P3…** in upload order across the whole conversation. Keep counting across messages; never restart.
 - Expect this order from the user: garment first, then its label or tags. Group consecutive photos into items by matching color, fabric, and print. A label photo belongs to the garment before it unless it clearly matches another.
-- Number items **#1, #2, #3…** across the whole conversation. Never restart. The user will reply with these numbers.
+- Number items **#1, #2, #3…** across the whole conversation, in photo order (then sort the board by verdict). If the user already numbered items, keep their numbers. Never restart. The user will reply with these numbers.
 - If a photo's item is unclear, attach it to the most likely item and mark it `~` (for example `P14~`).
 - Repeated label or patch in one batch: treat it as the same item (reversible, or front and back) unless the photos clearly show two garments. Say "one item, reversible" when that's the call.
 - Non-wearables: an object photo followed by a close-up of a mark, base, signature, or model plate belongs to that object.
@@ -24,7 +24,7 @@ One photo can hold many items. Itemize it before any verdict.
 
 ## The haul board
 
-Reply with this and nothing else:
+Reply with this and nothing else, except: a what-if or comparison section the user asked for (see `settings.md`) goes after the tally, and one short note line is allowed when there are no BUYs:
 
 ```
 **Bins · photos P21–P36 · 6 items**
@@ -67,7 +67,7 @@ If the app offers an inline interactive widget tool, you may offer once: "Want t
 
 ## Running tally
 
-End every board with a tally of this conversation's items: BUY count, MAYBE count, estimated total resale for BUYs (midpoints), and estimated total net.
+End every board with a tally of this conversation's items: BUY count, MAYBE count, estimated total resale for BUYs (midpoints), and estimated total net. With no BUYs, show the MAYBE totals instead and label them (`MAYBE est. resale $n`). PASS lines show a net only when it explains the PASS ("net ~$6").
 
 ## New-chat nudge
 
